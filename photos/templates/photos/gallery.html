@@ -1,108 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery</title>
 
-    <!-- CSS only -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
- integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-<style>
-  .image-thumbnail{
-    height: 200px;
-    object-fit: cover;
-  }
-</style>
+  <style>
+    .image-thumbnail {
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
 
 </head>
 
 <body class="m-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card">
-                    <div class="card-header">
-                    Categories
-                    </div>
-                    <ul class="list-group list-group-flush">
-                    <li class="list-group-item">All</li>
-                    <li class="list-group-item">Categories</li>
-                    <li class="list-group-item">puppies</li>
-                    <li class="list-group-item">houses</li>
-
-                      <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>   
-
-                    </ul>
-                </div>
-            </div>    
-          <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-4">
-                  <div class="card">
-                    <img class="image-thumbnail" 
-                        src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg" 
-                        alt="Card image cap">
-                      <div class="card-body">
-                        <small>Category: pets</small>
-                      </div>
-                      <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                  </div>  
-              </div>
-
-              <div class="col-md-4">
-                <div class="card">
-                  <img class="image-thumbnail" 
-                      src="https://media.istockphoto.com/photos/cat-world-picture-id1311993425?b=1&k=20&m=1311993425&s=170667a&w=0&h=vFvrS09vrSeKH_u2XZVmjuKeFiIEjTkwr9KQdyOfqvg=" 
-                      alt="Card image cap">
-                    <div class="card-body">
-                      <small>Category: pets</small>
-                    </div>
-                    <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-                </div>  
-            </div>
-
-            <div class="col-md-4">
-              <div class="card">
-                <img class="image-thumbnail" 
-                    src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg" 
-                    alt="Card image cap">
-                  <div class="card-body">
-                    <small>Category: pets</small>
-                  </div>
-                  <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-              </div>  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-header">
+            Categories
           </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">All</li>
 
+            {% for category in categories %}
+            <li class="list-group-item">{{category.name}}</li>
+            {% endfor %}
+
+            <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
+
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
           <div class="col-md-4">
             <div class="card">
-              <img class="image-thumbnail" 
-                  src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg" 
-                  alt="Card image cap">
-                <div class="card-body">
-                  <small>Category: pets</small>
-                </div>
-                <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-            </div>  
-        </div>
-
-        <div class="col-md-4">
-          <div class="card">
-            <img class="image-thumbnail" 
-                src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg" 
+              <img class="image-thumbnail"
+                src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg"
                 alt="Card image cap">
               <div class="card-body">
                 <small>Category: pets</small>
               </div>
               <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
-          </div>  
-      </div>
             </div>
           </div>
-         
+
         </div>
       </div>
+
+    </div>
+  </div>
 </body>
+
 </html>
