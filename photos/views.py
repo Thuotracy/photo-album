@@ -1,6 +1,4 @@
-from email.mime import image
-from unicodedata import category
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Category, Photo
 
 # Create your views here.
@@ -26,7 +24,7 @@ def addPhoto(request):
         image = request.FILES.get('image')
 
         if data['category'] != 'none':
-            category =Category.object.get(id=data['category'])
+            category =Category.objects.get(id=data['category'])
         elif data['category_new'] != '':
             category, created = Category.objects.get_or_created(name=data['category_new'])   
         else:
@@ -36,7 +34,9 @@ def addPhoto(request):
             category=category,
             description=data['description'],
             image=image,
-        )    
+        )  
+
+        return redirect('gallery')
 
     context = {'categories' : categories}
     return render(request, 'photos/add.html', context)        
