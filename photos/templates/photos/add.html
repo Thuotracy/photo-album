@@ -20,17 +20,19 @@
                     <form>
                         <div class="form-group m-3">
                             <label>Description</label>
-                            <input type="text" placeholder="Enter A Description" class="form-control">
+                            <input name="description" type="text" placeholder="Enter A Description" class="form-control">
                         </div>
 
                         <div class="form-group m-3">
-                            <label>Select</label>
-                            <input type="text" placeholder="Enter A Description" class="form-control">
+                            <label>Select A Category</label>
+                            <select name="category" class="form-control">
+                                <option value="none">Select A Category...</option>
+                            </select>
                         </div>
 
                         <div class="form-group m-3">
                           <label>Upload Image</label>
-                          <input type="file" class="form-control-file">
+                          <input name="image" type="file" class="form-control-file">
                         </div>
                     </form>
                 </div>   
