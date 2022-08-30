@@ -42,18 +42,21 @@
       </div>
       <div class="col-md-9">
         <div class="row">
+          {% for photo in photos %}
           <div class="col-md-4">
             <div class="card">
               <img class="image-thumbnail"
-                src="https://static.scientificamerican.com/sciam/cache/file/92E141F8-36E4-4331-BB2EE42AC8674DD3_source.jpg"
+                src="{{photo.image.url}}"
                 alt="Card image cap">
               <div class="card-body">
-                <small>Category: pets</small>
+                <small>Category: {{photo.category.name}}</small>
               </div>
-              <a href="{% url 'photo' 5 %}" class="btn btn-outline-dark btn-sm m-1">View</a>
+              <a href="{% url 'photo' photo.id %}" class="btn btn-outline-dark btn-sm m-1">View</a>
             </div>
           </div>
-
+          {% empty%}
+          <h3>No Photos!</h3>
+          {% endfor %}
         </div>
       </div>
 
