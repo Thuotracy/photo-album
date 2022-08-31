@@ -1,12 +1,18 @@
+from unicodedata import category
 from django.shortcuts import render, redirect
 from .models import Category, Photo
 
 # Create your views here.
 
 def gallery(request):
-    categories = Category.objects.all()
-    photos = Photo.objects.all()
+    category = request.GET.get('category')
+    if category == None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(category__name=category)
+  
 
+    categories = Category.objects.all()
     context = {'categories' : categories, 'photos' : photos}
     return render(request, 'photos/gallery.html', context)
 
