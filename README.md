@@ -7,6 +7,7 @@ This is a photo album
 * HTML
 * CSS
 * JavaScript
+* Python
 
 ## Live link
 https://thuotracy.github.io/animated-background/
