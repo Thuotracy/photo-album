@@ -10,7 +10,7 @@ This is a photo album
 * Python
 
 ## Live link
-https://thuotracy.github.io/animated-back
+https://thuotracy.
 
 ## Support and contact details
 Incase you run into any issues kindly contact me on this Email tracyjacobs775@gmail.com
