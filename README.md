@@ -1,7 +1,7 @@
 ## PHOTO ALBUM
 
 ## Description
-An animated background that switches between day and night mode when you click on the sun.
+This is a photo album
 
 ## Technologies Used
 * HTML
