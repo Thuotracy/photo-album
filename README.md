@@ -1,5 +1,4 @@
 ## PHOTO ALBUM
-
 ## Description
 This is a photo album
 
